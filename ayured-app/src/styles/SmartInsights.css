@@ -1,0 +1,427 @@
+  /* Smart Insights Styles */
+
+.insights-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+}
+
+.insights-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.insights-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+.insights-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.insights-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.dosha-selector {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.dosha-selector h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.dosha-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.dosha-btn {
+  padding: 0.8rem 2rem;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.dosha-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dosha-btn.active {
+  color: white;
+  border-color: transparent;
+}
+
+.dosha-description {
+  color: #666;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin: 0;
+}
+
+.insights-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.insights-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.filter-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.filter-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.filter-subtitle {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 1.2rem;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.filter-checkbox input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.insights-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.insights-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid;
+  animation: slideUp 0.5s ease;
+}
+
+.insights-card.vata {
+  border-top-color: #d4a574;
+}
+
+.insights-card.pitta {
+  border-top-color: #ff6b6b;
+}
+
+.insights-card.kapha {
+  border-top-color: #4ecdc4;
+}
+
+.insights-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.insight-item {
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #a89a5f;
+  transition: all 0.3s ease;
+}
+
+.insight-item:hover {
+  background: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.insight-item p {
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.daily-tips-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #f0b63f;
+}
+
+.daily-tips-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.tip-card h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.tip-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.seasonal-tips-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #6bcf7f;
+}
+
+.seasonal-tips-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.seasonal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.seasonal-item {
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 5px solid;
+  background: white;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.seasonal-item.spring {
+  border-left-color: #6bcf7f;
+  background: linear-gradient(135deg, #f0fff5 0%, #e8f9f0 100%);
+}
+
+.seasonal-item.summer {
+  border-left-color: #ffd93d;
+  background: linear-gradient(135deg, #fffef0 0%, #fff9e6 100%);
+}
+
+.seasonal-item.fall {
+  border-left-color: #ff9d5c;
+  background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%);
+}
+
+.seasonal-item.winter {
+  border-left-color: #4ecdc4;
+  background: linear-gradient(135deg, #f0fffe 0%, #e8f9f8 100%);
+}
+
+.seasonal-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.seasonal-item h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.seasonal-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.remedies-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #a89a5f;
+}
+
+.remedies-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.remedies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.remedy-item {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+}
+
+.remedy-item h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.remedy-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.insights-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-food,
+.btn-back {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-food {
+  background-color: #a89a5f;
+  color: white;
+}
+
+.btn-food:hover {
+  background-color: #8f8450;
+  transform: translateY(-2px);
+}
+
+.btn-back {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-back:hover {
+  background-color: #e8e8e8;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .insights-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .dosha-buttons {
+    flex-direction: column;
+  }
+
+  .dosha-btn {
+    width: 100%;
+  }
+
+  .tips-grid,
+  .seasonal-grid,
+  .remedies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-layout {
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,419 @@
+/* Food Recommendations Styles */
+
+.food-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+}
+
+.form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+  animation: slideUp 0.5s ease;
+}
+
+.form-card h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.form-card > p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.recommendations-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #a89a5f;
+  box-shadow: 0 0 0 3px rgba(168, 154, 95, 0.1);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-submit,
+.btn-cancel {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-submit {
+  background-color: #a89a5f;
+  color: white;
+  flex: 1;
+  min-width: 150px;
+}
+
+.btn-submit:hover {
+  background-color: #8f8450;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+  background-color: #e8e8e8;
+}
+
+/* Recommendations Display */
+.recommendations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.recommendations-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.recommendations-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.recommendations-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.user-profile-summary {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-profile-summary h3 {
+  color: #333;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.user-profile-summary p {
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.issues {
+  margin-top: 0.5rem;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.recommendation-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid;
+  animation: slideUp 0.5s ease;
+}
+
+.recommendation-card.eating {
+  border-left-color: #6bcf7f;
+}
+
+.recommendation-card.avoiding {
+  border-left-color: #ff6b6b;
+}
+
+.recommendation-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.food-list {
+  list-style: none;
+  padding: 0;
+}
+
+.food-list li {
+  padding: 0.7rem 0;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 1.5;
+}
+
+.food-list li:last-child {
+  border-bottom: none;
+}
+
+.meal-timing-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #4ecdc4;
+}
+
+.meal-timing-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.timing-note {
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.timings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.timing-slot {
+  background: #f9f9f9;
+  padding: 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.timing-slot h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.timing-slot p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.seasonal-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #f0b63f;
+}
+
+.seasonal-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.seasonal-card p {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.sample-menu-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #a89a5f;
+}
+
+.sample-menu-card h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item h4 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.recommendations-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-insights,
+.btn-modify,
+.btn-home {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-insights {
+  background-color: #6bcf7f;
+  color: white;
+}
+
+.btn-insights:hover {
+  background-color: #5ab870;
+  transform: translateY(-2px);
+}
+
+.btn-modify {
+  background-color: #4ecdc4;
+  color: white;
+}
+
+.btn-modify:hover {
+  background-color: #3abaad;
+  transform: translateY(-2px);
+}
+
+.btn-home {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-home:hover {
+  background-color: #e8e8e8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-items {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendations-header h1 {
+    font-size: 1.8rem;
+  }
+}

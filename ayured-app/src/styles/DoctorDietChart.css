@@ -1,0 +1,1116 @@
+/* Doctor Diet Chart Styles */
+
+.diet-chart-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+}
+
+.diet-chart-content {
+  flex: 1;
+  margin-left: 260px;
+  padding: 2rem;
+}
+
+/* Page Header */
+.page-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header-content h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #999;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Tabs */
+.chart-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: white;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.tab-button.active {
+  background: linear-gradient(135deg, #a89a5f 0%, #c4b88a 100%);
+  color: white;
+}
+
+/* Create Chart Form */
+.create-chart-form {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+}
+
+.form-section h2 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #a89a5f;
+  box-shadow: 0 0 0 3px rgba(168, 154, 95, 0.1);
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.ai-suggest-btn {
+  background: linear-gradient(135deg, #a89a5f 0%, #8f8450 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.btn-generate {
+  padding: 0.8rem 2rem;
+  background: white;
+  color: #a89a5f;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 0.8rem;
+}
+
+.btn-generate:hover {
+  transform: scale(1.05);
+}
+
+.hint {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.diet-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.meal-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meal-input label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.meal-input textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.meal-input textarea:focus {
+  outline: none;
+  border-color: #a89a5f;
+  box-shadow: 0 0 0 3px rgba(168, 154, 95, 0.1);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn-save,
+.btn-cancel {
+  padding: 0.85rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.btn-save {
+  background-color: #a89a5f;
+  color: white;
+  flex: 1;
+  min-width: 150px;
+}
+
+.btn-save:hover {
+  background-color: #8f8450;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+  background-color: #e8e8e8;
+}
+
+/* Charts List */
+.charts-header {
+  margin-bottom: 2rem;
+  animation: slideUp 0.5s ease;
+}
+
+.charts-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-new-chart {
+  padding: 0.8rem 1.8rem;
+  background-color: #a89a5f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-new-chart:hover {
+  background-color: #8f8450;
+  transform: translateY(-2px);
+}
+
+.charts-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a89a5f;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.empty-state {
+  background: white;
+  border-radius: 12px;
+  padding: 4rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.btn-start {
+  padding: 0.8rem 2rem;
+  background-color: #a89a5f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+  background-color: #8f8450;
+  transform: translateY(-2px);
+}
+
+.charts-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
+  border-left: 5px solid;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.chart-card.status-draft {
+  border-left-color: #ffd93d;
+}
+
+.chart-card.status-approved {
+  border-left-color: #6bcf7f;
+}
+
+.chart-header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.patient-info h3 {
+  color: #333;
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.patient-info p {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge.draft {
+  background-color: #fff9e6;
+  color: #b8860b;
+}
+
+.status-badge.approved {
+  background-color: #e8f9f0;
+  color: #2d8659;
+}
+
+.issues-list {
+  padding: 0 1.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.issues-list strong {
+  color: #333;
+}
+
+.diet-plan {
+  padding: 1.5rem;
+  background: #f9f9f9;
+}
+
+.diet-plan h4 {
+  color: #333;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.meals {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.meal {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.meal strong {
+  color: #333;
+  font-weight: 600;
+}
+
+.notes {
+  padding: 1rem 1.5rem;
+  background: #f0f9ff;
+  font-size: 0.85rem;
+  color: #555;
+  border-top: 1px solid #e0f2ff;
+}
+
+.notes strong {
+  color: #333;
+}
+
+.chart-actions {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.btn-edit,
+.btn-approve,
+.btn-delete {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #4ecdc4;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #3abaad;
+}
+
+.btn-approve {
+  background-color: #6bcf7f;
+  color: white;
+}
+
+.btn-approve:hover {
+  background-color: #5ab870;
+}
+
+.btn-delete {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #e85555;
+}
+
+.doctor-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-home {
+  padding: 0.8rem 2rem;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-home:hover {
+  background-color: #e8e8e8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .diet-chart-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .form-grid,
+  .form-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.section-description {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.form-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #a89a5f;
+  box-shadow: 0 0 0 3px rgba(168, 154, 95, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+/* Meal Editor */
+.meal-editor {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.meal-editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.meal-editor-header h4 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  font-weight: 600;
+}
+
+.btn-add-item {
+  padding: 0.5rem 1rem;
+  background: #a89a5f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-add-item:hover {
+  background: #8f7d4f;
+}
+
+.meal-item-editor {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr auto;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  align-items: center;
+}
+
+.item-name-input,
+.item-desc-input,
+.item-cal-input {
+  padding: 0.7rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.item-name-input:focus,
+.item-desc-input:focus,
+.item-cal-input:focus {
+  outline: none;
+  border-color: #a89a5f;
+}
+
+.btn-remove-item {
+  padding: 0.5rem 0.8rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-remove-item:hover {
+  background: #e85555;
+}
+
+.btn-preview,
+.btn-reset {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-preview {
+  background: linear-gradient(135deg, #a89a5f 0%, #c4b88a 100%);
+  color: white;
+  flex: 1;
+}
+
+.btn-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 154, 95, 0.3);
+}
+
+.btn-reset {
+  background: #f5f5f5;
+  color: #555;
+  border: 2px solid #e0e0e0;
+}
+
+.btn-reset:hover {
+  background: #e8e8e8;
+}
+
+/* Preview & Print Styles */
+.chart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-back,
+.btn-print,
+.btn-export,
+.btn-new {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn-back {
+  background: #f5f5f5;
+  color: #555;
+}
+
+.btn-back:hover {
+  background: #e0e0e0;
+}
+
+.btn-print {
+  background: #4ecdc4;
+  color: white;
+}
+
+.btn-print:hover {
+  background: #3abaad;
+}
+
+.btn-export {
+  background: #ff6b6b;
+  color: white;
+}
+
+.btn-export:hover {
+  background: #e85555;
+}
+
+.btn-new {
+  background: linear-gradient(135deg, #a89a5f 0%, #c4b88a 100%);
+  color: white;
+}
+
+.btn-new:hover {
+  transform: translateY(-2px);
+}
+
+/* Printable Chart */
+.printable-chart {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.chart-header-banner {
+  background: linear-gradient(135deg, #a89a5f 0%, #c4b88a 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.banner-content h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.banner-content p {
+  font-size: 1rem;
+  opacity: 0.95;
+  margin: 0;
+}
+
+.chart-title-section {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 3px solid #f0f0f0;
+}
+
+.chart-title-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.generated-date {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.patient-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.meal-plan-section {
+  margin-bottom: 2.5rem;
+}
+
+.meal-plan-section h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.meal-time-block {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #a89a5f;
+}
+
+.meal-time-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.time-icon {
+  font-size: 1.5rem;
+}
+
+.meal-time-info h4 {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 0.3rem;
+  font-weight: 600;
+}
+
+.meal-time {
+  color: #a89a5f;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.meal-items-list {
+  margin-bottom: 1rem;
+}
+
+.meal-item-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.item-info h5 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.item-info p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.meal-total {
+  color: #a89a5f;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+.nutritional-summary-section {
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f0f0f0 100%);
+  border-radius: 12px;
+}
+
+.nutritional-summary-section h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.nutrition-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.nutrition-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid;
+}
+
+.nutrition-card.calories {
+  border-top-color: #6bcf7f;
+}
+
+.nutrition-card.protein {
+  border-top-color: #4ecdc4;
+}
+
+.nutrition-card.carbs {
+  border-top-color: #ffd93d;
+}
+
+.nutrition-card.fat {
+  border-top-color: #ff6b6b;
+}
+
+.nutrition-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.nutrition-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ayurvedic-guidelines-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.guidelines-column h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.guidelines-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guidelines-column li {
+  padding: 0.7rem 0 0.7rem 2rem;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.guidelines-column li:before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: #a89a5f;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.chart-footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 3px solid #f0f0f0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.chart-footer p {
+  margin: 0.5rem 0;
+}
+
+.footer-note {
+  font-weight: 600;
+  color: #a89a5f;
+}
+
+/* Print Styles */
+@media print {
+  .no-print,
+  .sidebar,
+  .navbar {
+    display: none !important;
+  }
+
+  .diet-chart-content {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .printable-chart {
+    box-shadow: none;
+    padding: 2rem;
+  }
+
+  .chart-header-banner,
+  .meal-time-block,
+  .meal-item-card,
+  .nutrition-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white;
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .nutrition-cards,
+  .ayurvedic-guidelines-section,
+  .patient-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .diet-chart-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .printable-chart {
+    padding: 1.5rem;
+  }
+
+  .form-grid,
+  .form-grid-4,
+  .nutrition-cards,
+  .ayurvedic-guidelines-section,
+  .patient-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .meal-item-editor {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-actions {
+    flex-direction: column;
+  }
+
+  .action-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+}
