@@ -2,12 +2,20 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import '../styles/DoctorDashboard.css';
+import {
+  loadConsultationRequests,
+  updateConsultationRequestStatus,
+  loadPatientUpdates,
+  markPatientUpdateRead
+} from '../utils/patientSession';
 
 function DoctorDashboard() {
   const navigate = useNavigate();
   const [showPatientDetails, setShowPatientDetails] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState(null);
   const [patients, setPatients] = useState([]);
+  const [consultationRequests, setConsultationRequests] = useState([]);
+  const [patientUpdates, setPatientUpdates] = useState([]);
 
   // Load patients from localStorage
   useEffect(() => {
@@ -15,6 +23,11 @@ function DoctorDashboard() {
     if (savedPatients) {
       setPatients(JSON.parse(savedPatients));
     }
+  }, []);
+
+  useEffect(() => {
+    setConsultationRequests(loadConsultationRequests());
+    setPatientUpdates(loadPatientUpdates());
   }, []);
 
   // Calculate dashboard stats from actual patient data
@@ -25,8 +38,29 @@ function DoctorDashboard() {
     dietGrowth: '+8%',
     foodItems: 3,
     foodGrowth: '+156',
-    appointments: 0,
+    appointments: consultationRequests.filter((r) => r?.status === 'pending').length,
     appointmentGrowth: '+2'
+  };
+
+  const pendingRequests = consultationRequests
+    .slice()
+    .sort((a, b) => (b?.id || 0) - (a?.id || 0))
+    .slice(0, 6);
+
+  const unreadUpdates = patientUpdates
+    .filter((u) => !u?.read)
+    .slice()
+    .sort((a, b) => (b?.id || 0) - (a?.id || 0))
+    .slice(0, 6);
+
+  const handleMarkRequest = (id, status) => {
+    updateConsultationRequestStatus(id, status);
+    setConsultationRequests(loadConsultationRequests());
+  };
+
+  const handleMarkUpdateRead = (id) => {
+    markPatientUpdateRead(id);
+    setPatientUpdates(loadPatientUpdates());
   };
 
   const recentActivities = [
@@ -201,6 +235,70 @@ function DoctorDashboard() {
                   <p className="schedule-time">{item.time}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Consultation Requests */}
+          <div className="dashboard-card recent-activities">
+            <div className="card-header">
+              <h2>📩 Consultation Requests</h2>
+              <p>New requests from patients</p>
+            </div>
+            <div className="activities-list">
+              {pendingRequests.length === 0 ? (
+                <div className="empty-state">
+                  <p>No consultation requests yet.</p>
+                </div>
+              ) : (
+                pendingRequests.map((r) => (
+                  <div key={r.id} className="activity-item">
+                    <div className="activity-info">
+                      <p className="activity-patient">{r.patientName || r.patientId || 'Patient'}</p>
+                      <p className="activity-text">
+                        {r.message}
+                      </p>
+                      {r.preferredDate ? (
+                        <p className="activity-text">Preferred: {r.preferredDate}</p>
+                      ) : null}
+                    </div>
+                    <div className="activity-meta">
+                      <span className="activity-badge new">pending</span>
+                      <div style={{ display: 'flex', gap: 8, marginTop: 8, justifyContent: 'flex-end' }}>
+                        <button className="btn-view-detail" onClick={() => handleMarkRequest(r.id, 'accepted')}>Accept</button>
+                        <button className="btn-view-detail" onClick={() => handleMarkRequest(r.id, 'closed')}>Close</button>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+
+          {/* Patient Updates */}
+          <div className="dashboard-card todays-schedule">
+            <div className="card-header">
+              <h2>📝 Patient Updates</h2>
+              <p>Latest progress / diet feedback</p>
+            </div>
+            <div className="schedule-list">
+              {unreadUpdates.length === 0 ? (
+                <div className="empty-state">
+                  <p>No new updates.</p>
+                </div>
+              ) : (
+                unreadUpdates.map((u) => (
+                  <div key={u.id} className="schedule-item">
+                    <div className="schedule-info">
+                      <p className="schedule-doctor">{u.patientName || u.patientId || 'Patient'}</p>
+                      <p className="schedule-type">{(u.category || 'update').toUpperCase()}: {u.message}</p>
+                      {u.relatedDietChartId ? (
+                        <p className="schedule-type">Diet chart: {u.relatedDietChartId}</p>
+                      ) : null}
+                    </div>
+                    <button className="btn-view-detail" onClick={() => handleMarkUpdateRead(u.id)}>Mark read</button>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>

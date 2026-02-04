@@ -18,6 +18,7 @@ function Landing() {
           
           <div className="hero-buttons">
             <button className="btn-start" onClick={() => navigate('/dosha-quiz')}>Start Your Journey</button>
+            <button className="btn-patient" onClick={() => navigate('/patient-auth')}>Patient Login</button>
             <button className="btn-doctor" onClick={() => navigate('/doctor-auth')}>Doctor Login</button>
           </div>
         </div>
