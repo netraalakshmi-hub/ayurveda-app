@@ -170,6 +170,23 @@
   color: white;
 }
 
+.btn-patient {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-patient:hover {
+  background-color: #333;
+  color: white;
+}
+
 /* Features Section */
 .features-section {
   padding: 4rem 2rem;
@@ -245,7 +262,8 @@
   }
 
   .btn-start,
-  .btn-doctor {
+  .btn-doctor,
+  .btn-patient {
     width: 100%;
     max-width: 300px;
   }

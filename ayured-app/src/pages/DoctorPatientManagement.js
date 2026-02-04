@@ -11,6 +11,7 @@ function DoctorPatientManagement() {
   const [searchTerm, setSearchTerm] = useState('');
   const [formData, setFormData] = useState({
     patientId: '',
+    email: '',
     name: '',
     age: '',
     gender: '',
@@ -31,6 +32,7 @@ function DoctorPatientManagement() {
       {
         id: 1,
         patientId: 'ashkumar91980',
+        email: 'ashkumar91980@example.com',
         name: 'Ashok Kumar',
         age: '99',
         gender: 'Male',
@@ -43,6 +45,7 @@ function DoctorPatientManagement() {
       {
         id: 2,
         patientId: 'priyam_m94',
+        email: 'priyam_m94@example.com',
         name: 'Priyam Mishra',
         age: '34',
         gender: 'Female',
@@ -55,6 +58,7 @@ function DoctorPatientManagement() {
       {
         id: 3,
         patientId: 'rajesh_k1980',
+        email: 'rajesh_k1980@example.com',
         name: 'Rajesh Kumar',
         age: '45',
         gender: 'Male',
@@ -67,6 +71,7 @@ function DoctorPatientManagement() {
       {
         id: 4,
         patientId: 'priya_s1993',
+        email: 'priya_s1993@example.com',
         name: 'Priya Sharma',
         age: '32',
         gender: 'Female',
@@ -79,6 +84,7 @@ function DoctorPatientManagement() {
       {
         id: 5,
         patientId: 'amit_verma',
+        email: 'amit_verma@example.com',
         name: 'Amit Verma',
         age: '38',
         gender: 'Male',
@@ -91,6 +97,7 @@ function DoctorPatientManagement() {
       {
         id: 6,
         patientId: 'neha_gupta',
+        email: 'neha_gupta@example.com',
         name: 'Neha Gupta',
         age: '29',
         gender: 'Female',
@@ -103,6 +110,7 @@ function DoctorPatientManagement() {
       {
         id: 7,
         patientId: 'vikram_singh',
+        email: 'vikram_singh@example.com',
         name: 'Vikram Singh',
         age: '52',
         gender: 'Male',
@@ -115,6 +123,7 @@ function DoctorPatientManagement() {
       {
         id: 8,
         patientId: 'divya_nair',
+        email: 'divya_nair@example.com',
         name: 'Divya Nair',
         age: '35',
         gender: 'Female',
@@ -185,6 +194,7 @@ function DoctorPatientManagement() {
   const resetForm = () => {
     setFormData({
       patientId: '',
+      email: '',
       name: '',
       age: '',
       gender: '',
@@ -200,7 +210,8 @@ function DoctorPatientManagement() {
 
   const filteredPatients = patients.filter(patient =>
     patient.patientId.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    patient.name.toLowerCase().includes(searchTerm.toLowerCase())
+    patient.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    (patient.email || '').toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (showForm) {
@@ -223,6 +234,17 @@ function DoctorPatientManagement() {
                   value={formData.patientId}
                   onChange={handleInputChange}
                   required
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Patient Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter patient email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
               </div>
 

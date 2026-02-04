@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import '../styles/DoctorDietChart.css';
+import { saveDietChart } from '../utils/patientSession';
 
 function DoctorDietChart() {
   const navigate = useNavigate();
@@ -124,6 +125,7 @@ function DoctorDietChart() {
     };
 
     setGeneratedChart(chart);
+    saveDietChart(chart);
     setCurrentStep('preview');
   };
 
