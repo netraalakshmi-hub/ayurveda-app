@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import '../styles/DoctorDietChart.css';
 import { saveDietChart } from '../utils/patientSession';
+import { calculateRecipeNutrients, getAllRecipes } from '../utils/recipeUtils';
 
 function DoctorDietChart() {
-  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState('create'); // 'create' or 'preview'
   const [patients, setPatients] = useState([]);
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -36,6 +35,9 @@ function DoctorDietChart() {
   ]);
 
   const [generatedChart, setGeneratedChart] = useState(null);
+  const [availableRecipes, setAvailableRecipes] = useState([]);
+  const [showRecipeModal, setShowRecipeModal] = useState(false);
+  const [selectedRecipeForMeal, setSelectedRecipeForMeal] = useState(null);
 
   // Load patients from localStorage
   useEffect(() => {
@@ -43,6 +45,12 @@ function DoctorDietChart() {
     if (savedPatients) {
       setPatients(JSON.parse(savedPatients));
     }
+  }, []);
+
+  // Load recipes
+  useEffect(() => {
+    const allRecipes = getAllRecipes();
+    setAvailableRecipes(allRecipes);
   }, []);
 
   const dietGoals = [
@@ -86,6 +94,21 @@ function DoctorDietChart() {
     const newMealPlan = [...mealPlan];
     newMealPlan[mealIndex].items.splice(itemIndex, 1);
     setMealPlan(newMealPlan);
+  };
+
+  const addRecipeToMeal = (mealIndex, recipe) => {
+    const nutrients = calculateRecipeNutrients(recipe.ingredients);
+    const newMealPlan = [...mealPlan];
+    newMealPlan[mealIndex].items.push({
+      name: recipe.name,
+      description: `${recipe.description} - ${recipe.servings} servings`,
+      calories: nutrients.calories,
+      recipe: recipe.id,
+      nutrients: nutrients
+    });
+    setMealPlan(newMealPlan);
+    setShowRecipeModal(false);
+    setSelectedRecipeForMeal(null);
   };
 
   const calculateTotalNutrition = () => {
@@ -533,12 +556,24 @@ function DoctorDietChart() {
                 <div key={mealIndex} className="meal-editor">
                   <div className="meal-editor-header">
                     <h4>{meal.meal} - {meal.time}</h4>
-                    <button
-                      className="btn-add-item"
-                      onClick={() => addMealItem(mealIndex)}
-                    >
-                      + Add Item
-                    </button>
+                    <div className="meal-actions">
+                      <button
+                        className="btn-add-item"
+                        onClick={() => addMealItem(mealIndex)}
+                      >
+                        + Add Item
+                      </button>
+                      <button
+                        className="btn-add-recipe"
+                        onClick={() => {
+                          setSelectedRecipeForMeal(mealIndex);
+                          setShowRecipeModal(true);
+                        }}
+                        title="Add recipe with automatic nutrient analysis"
+                      >
+                        🍳 Add Recipe
+                      </button>
+                    </div>
                   </div>
 
                   {meal.items.map((item, itemIndex) => (
@@ -587,6 +622,57 @@ function DoctorDietChart() {
                 Reset Form
               </button>
             </div>
+
+            {/* Recipe Selection Modal */}
+            {showRecipeModal && (
+              <div className="recipe-modal-overlay">
+                <div className="recipe-modal">
+                  <div className="recipe-modal-header">
+                    <h3>Select Recipe for {mealPlan[selectedRecipeForMeal]?.meal || 'Meal'}</h3>
+                    <button
+                      className="modal-close"
+                      onClick={() => {
+                        setShowRecipeModal(false);
+                        setSelectedRecipeForMeal(null);
+                      }}
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="recipe-modal-content">
+                    <div className="recipe-grid">
+                      {availableRecipes.map((recipe) => (
+                        <div
+                          key={recipe.id}
+                          className="recipe-card-selectable"
+                          onClick={() => addRecipeToMeal(selectedRecipeForMeal, recipe)}
+                        >
+                          <div className="recipe-card-header">
+                            <h4>{recipe.name}</h4>
+                            <span className="recipe-servings">{recipe.servings} servings</span>
+                          </div>
+                          <p className="recipe-description">{recipe.description}</p>
+                          <div className="recipe-meta">
+                            <span className="recipe-time">⏱️ {recipe.prepTime || 'N/A'}</span>
+                            <span className="recipe-difficulty">{recipe.difficulty}</span>
+                          </div>
+                          <div className="recipe-doshas">
+                            {recipe.suitableFor && recipe.suitableFor.map((dosha) => (
+                              <span key={dosha} className={`dosha-badge ${dosha.toLowerCase()}`}>
+                                {dosha}
+                              </span>
+                            ))}
+                          </div>
+                          <button className="btn-select-recipe">
+                            Select Recipe
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
