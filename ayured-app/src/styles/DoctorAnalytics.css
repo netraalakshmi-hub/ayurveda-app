@@ -1,0 +1,650 @@
+/* Doctor Analytics Styling */
+
+.analytics-container {
+  padding: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.analytics-header {
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 3px solid #2d5016;
+  padding-bottom: 20px;
+}
+
+.analytics-header h1 {
+  font-size: 2.5rem;
+  color: #2d5016;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.analytics-header p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Patient Selector */
+.patient-selector-card {
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.patient-selector-card label {
+  font-weight: 600;
+  color: #2d5016;
+  font-size: 1rem;
+}
+
+.patient-select {
+  flex: 1;
+  padding: 10px 15px;
+  border: 2px solid #2d5016;
+  border-radius: 6px;
+  background-color: white;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.patient-select:hover {
+  border-color: #48a23f;
+  box-shadow: 0 2px 8px rgba(72, 162, 63, 0.2);
+}
+
+.patient-select:focus {
+  outline: none;
+  border-color: #48a23f;
+  box-shadow: 0 0 0 3px rgba(72, 162, 63, 0.1);
+}
+
+/* Analytics Grid */
+.analytics-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 1200px) {
+  .analytics-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Analytics Card Base */
+.analytics-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #2d5016;
+  transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.analytics-card h2 {
+  font-size: 1.3rem;
+  color: #2d5016;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+/* Constitution Card */
+.constitution-card {
+  border-left-color: #d4a574;
+}
+
+.constitution-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 800px) {
+  .constitution-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dosha-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dosha-badge {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+}
+
+.dosha-badge.primary-dosha {
+  background: linear-gradient(135deg, #2d5016 0%, #48a23f 100%);
+}
+
+.dosha-name {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.dosha-label {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.constitution-detail,
+.patient-basic {
+  margin: 0;
+  color: #333;
+  font-size: 0.95rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.constitution-detail strong,
+.patient-basic strong {
+  color: #2d5016;
+}
+
+.dosha-description p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Goals Card */
+.goals-card {
+  border-left-color: #48a23f;
+}
+
+.progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.overall-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-label {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.progress-bar {
+  height: 30px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2d5016 0%, #48a23f 100%);
+  transition: width 0.5s ease;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.progress-percent {
+  text-align: center;
+  font-weight: 600;
+  color: #2d5016;
+  margin: 0;
+}
+
+.goals-detail {
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.goals-detail p {
+  margin: 8px 0;
+  color: #333;
+}
+
+/* Diet Card */
+.diet-card {
+  border-left-color: #d4a574;
+}
+
+.diet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.diet-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border-left: 4px solid #d4a574;
+}
+
+.diet-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.diet-value {
+  font-size: 1.3rem;
+  color: #2d5016;
+  font-weight: 700;
+}
+
+.diet-note {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 10px;
+  background-color: #f0f9e8;
+  border-radius: 6px;
+}
+
+.btn-view-chart {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #2d5016 0%, #48a23f 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.btn-view-chart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(72, 162, 63, 0.3);
+}
+
+.no-data {
+  color: #999;
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Metrics Card */
+.metrics-card {
+  border-left-color: #48a23f;
+}
+
+.metrics-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.metric-bar {
+  height: 20px;
+  background-color: #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.metric-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+.metric-fill.energy {
+  background: linear-gradient(90deg, #ffc107 0%, #ff9800 100%);
+}
+
+.metric-fill.sleep {
+  background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
+}
+
+.metric-fill.digestion {
+  background: linear-gradient(90deg, #48a23f 0%, #2d5016 100%);
+}
+
+.metric-fill.adherence {
+  background: linear-gradient(90deg, #9c27b0 0%, #6a1b9a 100%);
+}
+
+.metric-value {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Weight Card */
+.weight-card {
+  border-left-color: #48a23f;
+  grid-column: 1 / -1;
+}
+
+.weight-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .weight-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.weight-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.weight-stat {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #e8e8e8;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 8px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  color: #2d5016;
+  font-weight: 700;
+  margin: 0;
+}
+
+.weight-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.progress-fill.weight {
+  background: linear-gradient(90deg, #2d5016 0%, #48a23f 100%);
+}
+
+.progress-text {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Monthly Table Card */
+.monthly-card {
+  border-left-color: #2d5016;
+  grid-column: 1 / -1;
+}
+
+.monthly-table {
+  overflow-x: auto;
+}
+
+.monthly-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.monthly-table th {
+  background-color: #f0f9e8;
+  color: #2d5016;
+  padding: 12px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #2d5016;
+}
+
+.monthly-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e8e8e8;
+  color: #333;
+}
+
+.monthly-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.weight-col {
+  font-weight: 600;
+  color: #2d5016;
+}
+
+.adherence-col {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mini-bar {
+  height: 8px;
+  width: 80px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.mini-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #48a23f 0%, #2d5016 100%);
+  border-radius: 4px;
+}
+
+.wellbeing-col {
+  text-align: center;
+}
+
+.wellbeing-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.wellbeing-badge.good {
+  background-color: #c8e6c9;
+  color: #2d5016;
+}
+
+.wellbeing-badge.fair {
+  background-color: #fff9c4;
+  color: #f57f17;
+}
+
+.wellbeing-badge.needs-work {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+/* Recommendations Card */
+.recommendations-card {
+  border-left-color: #d4a574;
+  grid-column: 1 / -1;
+}
+
+.recommendations-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.recommendation-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-left: 4px solid #d4a574;
+}
+
+.rec-icon {
+  font-size: 1.8rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.rec-title {
+  font-weight: 700;
+  color: #2d5016;
+  margin: 0 0 5px 0;
+  font-size: 0.95rem;
+}
+
+.rec-text {
+  color: #555;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .analytics-container {
+    padding: 30px;
+  }
+
+  .analytics-header h1 {
+    font-size: 2rem;
+  }
+
+  .analytics-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-container {
+    padding: 20px;
+  }
+
+  .analytics-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .analytics-header p {
+    font-size: 0.9rem;
+  }
+
+  .patient-selector-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .patient-select {
+    width: 100%;
+  }
+
+  .analytics-card {
+    padding: 15px;
+  }
+
+  .constitution-content {
+    grid-template-columns: 1fr;
+  }
+
+  .weight-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .weight-content {
+    grid-template-columns: 1fr;
+  }
+
+  .monthly-table {
+    font-size: 0.85rem;
+  }
+
+  .monthly-table th,
+  .monthly-table td {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .analytics-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .analytics-grid-2 {
+    padding: 0;
+    gap: 15px;
+  }
+
+  .analytics-card {
+    padding: 12px;
+  }
+
+  .analytics-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .weight-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-bar {
+    width: 50px;
+  }
+
+  .recommendation-item {
+    flex-direction: column;
+  }
+
+  .rec-icon {
+    font-size: 1.5rem;
+  }
+}

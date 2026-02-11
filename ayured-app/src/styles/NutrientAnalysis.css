@@ -1,0 +1,372 @@
+/* Nutrient Analysis Component Styling */
+
+.nutrient-analysis-panel {
+  background: linear-gradient(135deg, #f0f9e8 0%, #ffffff 100%);
+  border: 2px solid #2d5016;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.analysis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #2d5016;
+}
+
+.analysis-header h3 {
+  font-size: 1.2rem;
+  color: #2d5016;
+  margin: 0;
+  font-weight: 700;
+}
+
+.quality-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quality-badge.quality-excellent {
+  background: linear-gradient(135deg, #48a23f 0%, #2d5016 100%);
+  color: white;
+}
+
+.quality-badge.quality-very-good {
+  background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+  color: white;
+}
+
+.quality-badge.quality-good {
+  background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+  color: white;
+}
+
+.quality-badge.quality-balanced {
+  background: linear-gradient(135deg, #a5d6a7 0%, #81c784 100%);
+  color: #1b5e20;
+}
+
+/* Calories Summary */
+.calories-summary {
+  background-color: white;
+  border-left: 4px solid #2d5016;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calorie-value {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calorie-value .label {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.calorie-value .value {
+  font-size: 2rem;
+  color: #2d5016;
+  font-weight: 700;
+}
+
+.daily-reference {
+  text-align: right;
+}
+
+.daily-reference .percent {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+
+/* Macronutrients Section */
+.macros-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.macros-section h4 {
+  font-size: 1rem;
+  color: #2d5016;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.macro-bar {
+  display: flex;
+  height: 30px;
+  background-color: #e8e8e8;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.macro-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.macro-segment.protein {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A52 100%);
+}
+
+.macro-segment.carbs {
+  background: linear-gradient(135deg, #FFD93D 0%, #FFC722 100%);
+}
+
+.macro-segment.fat {
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+}
+
+.macro-label-bar {
+  color: white;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.macros-legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .macros-legend {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.macro-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.macro-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.macro-color.protein {
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5A52 100%);
+}
+
+.macro-color.carbs {
+  background: linear-gradient(135deg, #FFD93D 0%, #FFC722 100%);
+}
+
+.macro-color.fat {
+  background: linear-gradient(135deg, #6BCB77 0%, #4CAF50 100%);
+}
+
+.macro-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.macro-name {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.macro-value {
+  font-size: 0.9rem;
+  color: #2d5016;
+  font-weight: 700;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detail-item {
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  color: #2d5016;
+  font-weight: 700;
+}
+
+.detail-bar {
+  height: 6px;
+  background: linear-gradient(90deg, #2d5016 0%, #48a23f 100%);
+  border-radius: 3px;
+  width: 100%;
+}
+
+/* Recommendations Box */
+.recommendations-box {
+  background-color: #f0f9e8;
+  border-left: 4px solid #48a23f;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.recommendations-box h4 {
+  font-size: 0.95rem;
+  color: #2d5016;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.guidance-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guidance-list li {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Dosha Suitability */
+.dosha-suitability {
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.dosha-suitability h4 {
+  font-size: 0.95rem;
+  color: #2d5016;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.dosha-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dosha-suitable {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.dosha-suitable.dosha-vata {
+  background: linear-gradient(135deg, #8B7355 0%, #A0826D 100%);
+}
+
+.dosha-suitable.dosha-pitta {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C61 100%);
+}
+
+.dosha-suitable.dosha-kapha {
+  background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
+}
+
+/* Animations */
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.nutrient-analysis-panel {
+  animation: slideInScale 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .nutrient-analysis-panel {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .calories-summary {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .daily-reference {
+    text-align: left;
+    width: 100%;
+  }
+
+  .analysis-header h3 {
+    font-size: 1rem;
+  }
+
+  .calorie-value .value {
+    font-size: 1.5rem;
+  }
+
+  .macro-bar {
+    height: 25px;
+  }
+
+  .macro-label-bar {
+    font-size: 0.65rem;
+  }
+}

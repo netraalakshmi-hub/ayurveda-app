@@ -1,12 +1,10 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import foodDatabase, { categories, allTags } from '../data/foodDatabase';
+import foodDatabase, { categories } from '../data/foodDatabase';
 import '../styles/FoodDatabase.css';
 
 function FoodDatabase() {
-  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedTags, setSelectedTags] = useState([]);
