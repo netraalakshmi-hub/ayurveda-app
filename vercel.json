@@ -1,0 +1,5 @@
+{
+  "installCommand": "cd ayured-app && npm install",
+  "buildCommand": "cd ayured-app && npm run build",
+  "outputDirectory": "ayured-app/build"
+}
